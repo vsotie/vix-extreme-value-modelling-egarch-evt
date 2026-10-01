@@ -1,0 +1,30 @@
+IN-SAMPLE COVERAGE CHECK  (NOT the rolling backtest.)
+Parameters are fitted on the whole sample, so every model here is
+flattered. Purpose: verify the machinery and see whether the
+conditional-vs-unconditional contrast appears at all.
+
+VIX loaded from cache: data/vix_raw.csv (4934 rows, 2007-01-03 to 2026-06-30)
+=== VaR level 0.950  (target 5.0% violations, n = 4,932) ===
+                     model  viol   exp  rate%   p_uc  p_ind   p_cc  pi11%
+  EGARCH-EVT (conditional)   255 246.6   5.17 0.5851 0.7267 0.8105   4.71
+    EGARCH-t only (no EVT)   353 246.6   7.16 0.0000 0.2435 0.0000   5.67
+Static POT (unconditional)   243 246.6   4.93 0.8136 0.2423 0.4910   6.58
+  pi11% = P(violation tomorrow | violation today); target is the
+  unconditional rate 5.0% if violations are independent.
+
+=== VaR level 0.990  (target 1.0% violations, n = 4,932) ===
+                     model  viol  exp  rate%   p_uc  p_ind   p_cc  pi11%
+  EGARCH-EVT (conditional)    41 49.3   0.83 0.2201 0.4070 0.3343   0.00
+    EGARCH-t only (no EVT)    99 49.3   2.01 0.0000 0.4945 0.0000   3.03
+Static POT (unconditional)    46 49.3   0.93 0.6308 0.0090 0.0294   6.52
+  pi11% = P(violation tomorrow | violation today); target is the
+  unconditional rate 1.0% if violations are independent.
+
+=== VaR level 0.995  (target 0.5% violations, n = 4,932) ===
+                     model  viol  exp  rate%   p_uc  p_ind   p_cc  pi11%
+  EGARCH-EVT (conditional)    25 24.7   0.51 0.9454 0.6137 0.8783   0.00
+    EGARCH-t only (no EVT)    49 24.7   0.99 0.0000 0.3213 0.0001   0.00
+Static POT (unconditional)    27 24.7   0.55 0.6418 0.0083 0.0274   7.41
+  pi11% = P(violation tomorrow | violation today); target is the
+  unconditional rate 0.5% if violations are independent.
+

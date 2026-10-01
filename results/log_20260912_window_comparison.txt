@@ -1,0 +1,36 @@
+WINDOW-LENGTH SENSITIVITY: 1000 vs 1500 days
+3433 forecasts, 2012-12-18 -> 2026-06-30 (common period; NO Euro crisis)
+
+=== Overall coverage (viol / exp; Kupiec p) ===
+ q=0.95 (exp 172):
+   EGARCH n=1000: viol=176 rate=5.127%  Kupiec p=0.7344  pinball=100.5796
+   EGARCH n=1500: viol=172 rate=5.010%  Kupiec p=0.9781  pinball=100.9877
+   GARCH  n=1000: viol=185 rate=5.389%  Kupiec p=0.3016  pinball=102.8181
+   GARCH  n=1500: viol=187 rate=5.447%  Kupiec p=0.2357  pinball=102.8120
+ q=0.99 (exp 34):
+   EGARCH n=1000: viol=32 rate=0.932%  Kupiec p=0.6860  pinball=33.3544
+   EGARCH n=1500: viol=32 rate=0.932%  Kupiec p=0.6860  pinball=33.5771
+   GARCH  n=1000: viol=34 rate=0.990%  Kupiec p=0.9548  pinball=34.7871
+   GARCH  n=1500: viol=34 rate=0.990%  Kupiec p=0.9548  pinball=34.8705
+
+=== Does longer window change accuracy? DM on pinball, 1500 vs 1000 (neg => 1500 better) ===
+   EGARCH-EVT q=0.95: mean diff +0.4081  DM +1.454  p 0.1460
+   EGARCH-EVT q=0.99: mean diff +0.2226  DM +1.061  p 0.2885
+   GARCH-EVT q=0.95: mean diff -0.0061  DM -0.027  p 0.9787
+   GARCH-EVT q=0.99: mean diff +0.0834  DM +0.425  p 0.6709
+
+=== By-regime breach ratio (actual/expected, 99%) and pinball, EGARCH ===
+regime               days | ratio 1000 / 1500 | pinball 1000 / 1500
+Recovery '13-16      1008 | 0.99 / 0.99       | 30.600 / 30.578  (1500 better)
+Volmageddon '17-19    754 | 1.19 / 1.19       | 35.829 / 35.751  (1500 better)
+COVID '20-21          505 | 1.19 / 1.19       | 41.236 / 41.845  (1000 better)
+Tightening '22-24     772 | 0.39 / 0.39       | 28.725 / 29.389  (1000 better)
+Recent '25-26         385 | 1.04 / 1.04       | 34.980 / 35.024  (1000 better)
+
+=== EGARCH-vs-GARCH gap at each window (mean pinball diff EG-GA x1e4, 99%; neg=>EGARCH better) ===
+   n=1000: EG-GA = -1.4326
+   n=1500: EG-GA = -1.2934
+
+=== Forecast character: VaR_1500 - VaR_1000 (EGARCH 99%, return units) ===
+   mean +0.00217  sd 0.01607  |  sd(VaR_1000)=0.0834  sd(VaR_1500)=0.0817
+   corr(VaR_1000,VaR_1500)=0.9812

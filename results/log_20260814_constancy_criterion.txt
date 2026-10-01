@@ -1,0 +1,29 @@
+=== The horizontal-line criterion, applied to an EXTENDED grid ===
+(extend below the 80th percentile, where the MRL already says the GPD fails,
+ to see whether the stability plot can detect the violation at all)
+
+           u     k      xi   CI_lo   CI_hi
+q                                         
+0.400 -0.259  2959 -0.0281 -0.0573  0.0011
+0.450 -0.161  2713 -0.0128 -0.0450  0.0193
+0.500 -0.071  2466 -0.0076 -0.0416  0.0264
+0.550  0.033  2219  0.0039 -0.0330  0.0408
+0.600  0.141  1973  0.0131 -0.0268  0.0531
+0.650  0.260  1726  0.0223 -0.0212  0.0658
+0.700  0.402  1480  0.0412 -0.0080  0.0904
+0.750  0.538  1233  0.0310 -0.0205  0.0824
+0.800  0.750   987  0.0745  0.0108  0.1382
+0.850  0.979   740  0.0927  0.0168  0.1687
+0.900  1.283   494  0.1006  0.0067  0.1945
+0.925  1.522   370  0.1277  0.0139  0.2415
+0.950  1.853   247  0.1734  0.0213  0.3255
+0.970  2.214   148  0.1150 -0.0690  0.2991
+
+=== Existence of a common value: intersection of all CIs above each candidate u0 ===
+  u0 at 0.40 pctile: intersection of CIs above it = [+0.0213,+0.0011]  ->  EMPTY: constancy REJECTED
+  u0 at 0.50 pctile: intersection of CIs above it = [+0.0213,+0.0264]  ->  NON-EMPTY: constant value admissible
+  u0 at 0.60 pctile: intersection of CIs above it = [+0.0213,+0.0531]  ->  NON-EMPTY: constant value admissible
+  u0 at 0.70 pctile: intersection of CIs above it = [+0.0213,+0.0824]  ->  NON-EMPTY: constant value admissible
+  u0 at 0.80 pctile: intersection of CIs above it = [+0.0213,+0.1382]  ->  NON-EMPTY: constant value admissible
+  u0 at 0.85 pctile: intersection of CIs above it = [+0.0213,+0.1687]  ->  NON-EMPTY: constant value admissible
+  u0 at 0.90 pctile: intersection of CIs above it = [+0.0213,+0.1945]  ->  NON-EMPTY: constant value admissible

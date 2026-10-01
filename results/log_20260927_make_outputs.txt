@@ -1,0 +1,80 @@
+Fig 7.1 saved: Graphs/backtest_var_path.png  window 2019-01-02 -> 2021-06-30 viol 5
+  EGARCH-EVT 99% VaR in window: min 0.1329  max 0.7719 on 2020-03-17
+  Static POT 99% VaR in window: min 0.2624  max 0.3053
+  EGARCH-EVT violations in window (date, return, VaR, previous day's return):
+    2020-02-24  r +0.3822  VaR 0.3147  previous r +0.0932
+    2020-05-12  r +0.1810  VaR 0.1329  previous r -0.0148
+    2020-06-11  r +0.3917  VaR 0.1963  previous r +0.0000
+    2021-01-27  r +0.4802  VaR 0.2391  previous r -0.0074
+    2021-02-25  r +0.3029  VaR 0.2622  previous r -0.0797
+  Static POT violations in window: 8
+    2019-08-05  r +0.3339  VaR 0.2705
+    2020-02-24  r +0.3822  VaR 0.2670
+    2020-02-27  r +0.3513  VaR 0.2738
+    2020-03-12  r +0.3366  VaR 0.2842
+    2020-03-16  r +0.3576  VaR 0.2896
+    2020-06-11  r +0.3917  VaR 0.2938
+    2021-01-27  r +0.4802  VaR 0.2935
+    2021-02-25  r +0.3029  VaR 0.3015
+Full backtest 99% VaR, EGARCH-EVT: sd 0.0814  min 0.0854  max 1.0480
+Full backtest 99% VaR, Static POT:  sd 0.0285  min 0.1993  max 0.3053
+full path saved
+EGARCH-EVT 99% violations (date, return, VaR):
+  2011-01-28  r +0.2158  VaR 0.1644
+  2011-02-22  r +0.2358  VaR 0.1867
+  2011-06-01  r +0.1693  VaR 0.1523
+  2011-08-04  r +0.3032  VaR 0.2738
+  2011-08-08  r +0.4055  VaR 0.3902
+  2011-10-17  r +0.1675  VaR 0.1544
+  2011-10-31  r +0.2000  VaR 0.1253
+  2011-11-09  r +0.2745  VaR 0.1796
+  2013-02-20  r +0.1761  VaR 0.1476
+  2013-02-25  r +0.2928  VaR 0.2336
+  2013-04-15  r +0.3591  VaR 0.1719
+  2014-01-24  r +0.2756  VaR 0.2074
+  2014-07-17  r +0.2790  VaR 0.1906
+  2014-12-08  r +0.1842  VaR 0.1691
+  2015-06-29  r +0.2960  VaR 0.2332
+  2015-08-21  r +0.3815  VaR 0.3791
+  2016-06-24  r +0.4010  VaR 0.2505
+  2016-09-09  r +0.3357  VaR 0.1863
+  2017-05-17  r +0.3811  VaR 0.1647
+  2017-08-10  r +0.3672  VaR 0.2204
+  2017-09-05  r +0.1884  VaR 0.1864
+  2018-01-29  r +0.2224  VaR 0.2121
+  2018-02-05  r +0.7682  VaR 0.4293
+  2018-05-29  r +0.2527  VaR 0.1806
+  2018-10-04  r +0.2028  VaR 0.1805
+  2018-10-10  r +0.3643  VaR 0.3280
+  2018-12-04  r +0.2323  VaR 0.1928
+  2020-02-24  r +0.3822  VaR 0.3147
+  2020-05-12  r +0.1810  VaR 0.1329
+  2020-06-11  r +0.3917  VaR 0.1963
+  2021-01-27  r +0.4802  VaR 0.2391
+  2021-02-25  r +0.3029  VaR 0.2622
+  2021-11-26  r +0.4320  VaR 0.3042
+  2024-08-05  r +0.5002  VaR 0.4361
+  2024-09-03  r +0.2870  VaR 0.2276
+  2024-12-18  r +0.5541  VaR 0.2448
+  2025-01-27  r +0.1868  VaR 0.1410
+  2025-04-03  r +0.3333  VaR 0.2377
+  2025-10-10  r +0.2764  VaR 0.1710
+  2026-06-05  r +0.3342  VaR 0.1371
+Violations of the 99% VaR on consecutive forecast days (the pairs the first-order
+Christoffersen independence test counts):
+  EGARCH-EVT  0 pair(s): -
+  GARCH-EVT   1 pair(s): 2015-08-20/2015-08-21
+  Static POT  5 pair(s): 2015-08-20/2015-08-21, 2015-08-21/2015-08-24, 2018-02-02/2018-02-05, 2024-08-02/2024-08-05, 2025-04-03/2025-04-04
+  EGARCH-t    4 pair(s): 2011-10-31/2011-11-01, 2015-08-20/2015-08-21, 2018-02-02/2018-02-05, 2025-04-03/2025-04-04
+  GARCH-t     4 pair(s): 2015-08-20/2015-08-21, 2018-02-02/2018-02-05, 2024-08-02/2024-08-05, 2025-04-03/2025-04-04
+Chapter 1 episodes: 99% VaR issued the previous close, and the next day's VaR
+  2018-02-05: previous day 2018-02-02 r +0.2508, EGARCH-EVT VaR that day 0.3006
+  2018-02-05: r +0.7682 | EGARCH-EVT VaR 0.4293 (viol 1), next day 1.0480 | Static POT VaR 0.2372 (viol 1), next day 0.2526
+  2024-08-05: previous day 2024-08-02 r +0.2297, EGARCH-EVT VaR that day 0.3121
+  2024-08-05: r +0.5002 | EGARCH-EVT VaR 0.4361 (viol 1), next day 0.7732 | Static POT VaR 0.2115 (viol 1), next day 0.2213
+  2024-12-18: previous day 2024-12-17 r +0.0773, EGARCH-EVT VaR that day 0.2057
+  2024-12-18: r +0.5541 | EGARCH-EVT VaR 0.2448 (viol 1), next day 0.9923 | Static POT VaR 0.2211 (viol 1), next day 0.2319
+  2025-04-03: previous day 2025-04-02 r -0.0120, EGARCH-EVT VaR that day 0.2597
+  2025-04-03: r +0.3333 | EGARCH-EVT VaR 0.2377 (viol 1), next day 0.5172 | Static POT VaR 0.2245 (viol 1), next day 0.2269
+  2025-04-04: previous day 2025-04-03 r +0.3333, EGARCH-EVT VaR that day 0.2377
+  2025-04-04: r +0.4117 | EGARCH-EVT VaR 0.5172 (viol 0), next day 0.7617 | Static POT VaR 0.2269 (viol 1), next day 0.2341

@@ -1,0 +1,109 @@
+FULL RERUN OF THE ROLLING BACKTESTS (27 Sep 2026)
+run_all.py and sens_backtest.py rerun from the published code into ../rerun/ (Python 3.13.13, Linux,
+package versions as in requirements.txt), then compared with the published forecast files.
+
+=== 1. Main backtest: results/forecasts.csv ===
+published: results/forecasts.csv  (3933 rows)
+rerun:     ../rerun/results/forecasts.csv  (3933 rows)
+        column  dates differing  rel diff > 1e-6  rel diff > 1e-3 max rel diff violation flips
+      realized                0                0                0      0.0e+00                
+          e_ok                0                0                0      0.0e+00                
+         e_sig              532              150                1      1.6e-02                
+          e_nu              532              442                1      5.5e-02                
+          e_xi              532              400                5      5.2e-01                
+           e_k                0                0                0      0.0e+00                
+ eevt_VaR_0.95              532               74                1      5.6e-03               0
+  eevt_ES_0.95              532               72                1      9.6e-03                
+ eevt_VaR_0.99              532               71                1      6.9e-03               0
+  eevt_ES_0.99              532               74                1      2.3e-02                
+eevt_VaR_0.995              532               71                1      1.4e-02               0
+ eevt_ES_0.995              532               78                1      3.2e-02                
+   et_VaR_0.95              532               88                1      1.0e-02               0
+   et_VaR_0.99              532              223                1      2.2e-02               0
+  et_VaR_0.995              532              295                1      2.7e-02               0
+          g_ok                0                0                0      0.0e+00                
+         g_sig              571              317                0      5.7e-05                
+          g_nu              571              447                0      1.1e-04                
+          g_xi              571              537                1      2.0e-03                
+           g_k                0                0                0      0.0e+00                
+ gevt_VaR_0.95              571              245                0      4.9e-05               0
+  gevt_ES_0.95              571              250                0      5.0e-05                
+ gevt_VaR_0.99              571              249                0      5.0e-05               0
+  gevt_ES_0.99              571              264                0      5.0e-05                
+gevt_VaR_0.995              571              254                0      5.1e-05               0
+ gevt_ES_0.995              571              292                0      5.5e-05                
+   gt_VaR_0.95              571              292                0      5.4e-05               0
+   gt_VaR_0.99              571              345                0      6.8e-05               0
+  gt_VaR_0.995              571              367                0      7.6e-05               0
+          s_ok                0                0                0      0.0e+00                
+          s_xi                0                0                0      0.0e+00                
+           s_k                0                0                0      0.0e+00                
+    s_VaR_0.95                0                0                0      0.0e+00               0
+     s_ES_0.95                0                0                0      0.0e+00                
+    s_VaR_0.99                0                0                0      0.0e+00               0
+     s_ES_0.99                0                0                0      0.0e+00                
+   s_VaR_0.995                0                0                0      0.0e+00               0
+    s_ES_0.995                0                0                0      0.0e+00                
+
+rows identical in every column: 2925 of 3933
+violation flips over all VaR columns: 0
+
+=== 2. Sensitivity backtest: results/sens_forecasts.csv ===
+published: results/sens_forecasts.csv  (3933 rows)
+rerun:     ../rerun/results/sens_forecasts.csv  (3933 rows)
+         column  dates differing  rel diff > 1e-6  rel diff > 1e-3 max rel diff violation flips
+       realized                0                0                0      0.0e+00                
+base_0.850_0.95              532               73                0      4.1e-04                
+base_0.850_0.99              532               69                1      7.7e-03                
+base_0.875_0.95              532               73                1      1.3e-02                
+base_0.875_0.99              532               69                1      1.7e-02                
+base_0.900_0.95              532               74                1      5.6e-03                
+base_0.900_0.99              532               71                1      6.9e-03                
+base_0.925_0.95              532               70                1      4.7e-03                
+base_0.925_0.99              532               72                1      1.6e-02                
+       alt_0.95              545               94                4      1.4e-01                
+       alt_0.99              545               91                4      1.2e-01                
+
+rows identical in every column: 2954 of 3933
+violation flips over all VaR columns: 0
+
+=== 3. Evaluation scripts run on the rerun forecasts: every line that differs from the published log ===
+    ('<' = rerun, '>' = published log; a script with no lines listed reproduced its log exactly)
+--- evaluate.py vs log_20260901_backtest_eval.txt
+<   EGARCH-t: RMSE_var=1.756924e-02  QLIKE=-4.26679
+>   EGARCH-t: RMSE_var=1.756922e-02  QLIKE=-4.26680
+--- var_accuracy.py vs log_20260901_var_accuracy.txt
+<  q=0.95: EGARCH-EVT 99.5784  GARCH-EVT 101.2399  DM -1.940  p 0.0524
+>  q=0.95: EGARCH-EVT 99.5782  GARCH-EVT 101.2399  DM -1.940  p 0.0524
+<  q=0.95: eevt=99.5784  gevt=101.2399  s=102.5354  et=101.1019  gt=102.8483
+<  q=0.99: eevt=32.6660  gevt=33.8331  s=35.8766  et=34.0890  gt=34.5815
+<  q=0.995: eevt=19.8147  gevt=20.7032  s=21.7179  et=21.2482  gt=21.7176
+>  q=0.95: eevt=99.5782  gevt=101.2399  s=102.5354  et=101.1017  gt=102.8483
+>  q=0.99: eevt=32.6660  gevt=33.8331  s=35.8766  et=34.0888  gt=34.5815
+>  q=0.995: eevt=19.8147  gevt=20.7032  s=21.7179  et=21.2481  gt=21.7176
+<    q=0.95 after UP  : DM -1.166  p 0.2436
+>    q=0.95 after UP  : DM -1.166  p 0.2435
+<    q=0.99 after UP  : DM -2.153  p 0.0313
+>    q=0.99 after UP  : DM -2.154  p 0.0313
+--- regime_analysis.py vs log_20260912_regime_analysis.txt
+<   Tightening '22-24    EGARCH 28.726  GARCH 30.148  Static 34.445 | EG-GA -1.422 (EGARCH better)
+>   Tightening '22-24    EGARCH 28.725  GARCH 30.148  Static 34.445 | EG-GA -1.423 (EGARCH better)
+--- sens_backtest.py summary vs log_20260906_sens_backtest.txt (the first line is the run time)
+< DONE 3933 forecasts in 6.0 min
+> DONE 3933 forecasts in 8.0 min
+<    thr=0.875 (k~125): viol=201 rate=5.111% Kupiec_p=0.7511 pinball=99.5749
+<    thr=0.900 (k~100): viol=202 rate=5.136% Kupiec_p=0.6967 pinball=99.5784
+<    thr=0.925 (k~75): viol=203 rate=5.161% Kupiec_p=0.6439 pinball=99.5645
+>    thr=0.875 (k~125): viol=201 rate=5.111% Kupiec_p=0.7511 pinball=99.5746
+>    thr=0.900 (k~100): viol=202 rate=5.136% Kupiec_p=0.6967 pinball=99.5782
+>    thr=0.925 (k~75): viol=203 rate=5.161% Kupiec_p=0.6439 pinball=99.5644
+<    thr=0.850 (k~150): viol=40 rate=1.017% Kupiec_p=0.9147 pinball=32.6460
+<    thr=0.875 (k~125): viol=40 rate=1.017% Kupiec_p=0.9147 pinball=32.6826
+>    thr=0.850 (k~150): viol=40 rate=1.017% Kupiec_p=0.9147 pinball=32.6459
+>    thr=0.875 (k~125): viol=40 rate=1.017% Kupiec_p=0.9147 pinball=32.6824
+<    thr=0.925 (k~75): viol=41 rate=1.042% Kupiec_p=0.7904 pinball=32.7137
+>    thr=0.925 (k~75): viol=41 rate=1.042% Kupiec_p=0.7904 pinball=32.7135
+<  q=0.95: (1,1,1) viol=202 Kupiec_p=0.697 pinball=99.5784 | (2,1,2) viol=205 Kupiec_p=0.544 pinball=99.5164 | DM(alt-base) -0.436 p 0.6627
+<  q=0.99: (1,1,1) viol=40 Kupiec_p=0.915 pinball=32.6660 | (2,1,2) viol=40 Kupiec_p=0.915 pinball=32.6332 | DM(alt-base) -0.176 p 0.8602
+>  q=0.95: (1,1,1) viol=202 Kupiec_p=0.697 pinball=99.5782 | (2,1,2) viol=205 Kupiec_p=0.544 pinball=99.5116 | DM(alt-base) -0.468 p 0.6396
+>  q=0.99: (1,1,1) viol=40 Kupiec_p=0.915 pinball=32.6660 | (2,1,2) viol=40 Kupiec_p=0.915 pinball=32.6314 | DM(alt-base) -0.186 p 0.8528

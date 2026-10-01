@@ -1,0 +1,29 @@
+=== VaR forecast accuracy: pinball loss (mean x1e4) ===
+DM sign: negative => EGARCH-EVT lower loss (more accurate) than GARCH-EVT
+ q=0.95: EGARCH-EVT 99.5782  GARCH-EVT 101.2399  DM -1.940  p 0.0524
+ q=0.99: EGARCH-EVT 32.6660  GARCH-EVT 33.8331  DM -1.689  p 0.0912
+ q=0.995: EGARCH-EVT 19.8147  GARCH-EVT 20.7032  DM -1.568  p 0.1169
+
+=== all-model ordering (mean pinball x1e4; lower better) ===
+ q=0.95: eevt=99.5782  gevt=101.2399  s=102.5354  et=101.1017  gt=102.8483
+ q=0.99: eevt=32.6660  gevt=33.8331  s=35.8766  et=34.0888  gt=34.5815
+ q=0.995: eevt=19.8147  gevt=20.7032  s=21.7179  et=21.2481  gt=21.7176
+
+=== Asymmetry probe: VaR violation rate by sign of prior-day return ===
+ n_up=1785  n_down=2127
+ q=0.95 (target 5.0%):
+   EGARCH-EVT: after UP 4.82%   after DOWN 5.31%
+   GARCH-EVT : after UP 5.71%   after DOWN 4.89%
+ q=0.99 (target 1.0%):
+   EGARCH-EVT: after UP 0.84%   after DOWN 1.13%
+   GARCH-EVT : after UP 1.06%   after DOWN 0.85%
+
+=== DM on pinball by sign of prior shock (neg => EGARCH better) ===
+   q=0.95 after UP  : DM -1.166  p 0.2435
+   q=0.95 after DOWN: DM -1.653  p 0.0984
+   q=0.99 after UP  : DM -2.154  p 0.0313
+   q=0.99 after DOWN: DM -0.782  p 0.4340
+
+CONCLUSION: EGARCH-EVT's VaR advantage over the symmetric McNeil-Frey
+GARCH-EVT is concentrated after UPWARD VIX shocks (inverse-leverage regime),
+significant at q=0.99 (p=0.031), and absent after downward moves (p=0.43).

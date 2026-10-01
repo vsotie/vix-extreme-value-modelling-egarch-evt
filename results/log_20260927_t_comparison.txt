@@ -1,0 +1,23 @@
+=== 1. Shape: residual GPD against the fitted Student-t ===
+residual GPD (u = 1.2827, k = 494): xi = 0.1006 (se 0.0479)
+fitted t: nu = 4.8844 (se 0.360); implied shape 1/nu = 0.2047 (delta-method se 0.0151)
+95% interval for 1/nu from the Wald interval for nu: [0.1789, 0.2393]
+95% profile-likelihood interval for xi: see log_20260926_shape_inference.txt
+
+=== 2. Parametric bootstrap under the fitted t (B = 2000, n = 4932, seed 20260927) ===
+GPD shape fitted above the 90th percentile of t samples:
+  mean 0.1022  sd 0.0530  2.5-97.5% [-0.0015, 0.2011]
+  share of replicates with xi <= observed 0.1006: 0.4850
+Threshold and scale (same fits):
+  threshold u: t-boot mean 1.1379 [1.0868, 1.1883]   residuals 1.2827
+  GPD scale:   t-boot mean 0.5761 [0.5043, 0.6532]   residuals 0.7640
+
+Upper-tail quantiles: observed residuals against the bootstrap under the t
+     q  fitted t  obs GPD  t-boot GPD mean          2.5-97.5%  P(>=obs) |  obs emp  t-boot emp 2.5-97.5%  P(>=obs)
+  0.95    1.5566   1.8325           1.5526 [1.4878, 1.6219]    0.0000 |   1.8533    [1.4849, 1.6324]    0.0000
+  0.99    2.6116   3.2640           2.6348 [2.4770, 2.8050]    0.0000 |   3.1252    [2.4168, 2.8138]    0.0000
+ 0.995    3.1366   3.9556           3.1606 [2.9214, 3.4343]    0.0000 |   3.9529    [2.8312, 3.4479]    0.0000
+
+=== 3. Sensitivity: nu at each end of its 95% interval (B = 500 each) ===
+  nu = 4.178: xi mean 0.1464, share <= observed 0.2040; largest P(GPD quantile >= observed) over the three levels 0.0000
+  nu = 5.590: xi mean 0.0733, share <= observed 0.6980; largest P(GPD quantile >= observed) over the three levels 0.0000

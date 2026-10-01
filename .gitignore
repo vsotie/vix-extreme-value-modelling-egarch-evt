@@ -1,0 +1,23 @@
+# The data are not redistributed: the series is copyrighted by Cboe (see README).
+# This also keeps the download made by src/compare_fred.py out of the repository
+data/
+
+# Local environment and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Operating-system files
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Figures from an earlier, superseded sample window
+Graphs/2006-2024 (Oct)/
+
+# Personal working notes
+data_exploration_notes.md
+methodology_acf.tex
+
+# Earlier versions of outputs, kept for the record only
+superseded/

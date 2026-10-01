@@ -1,0 +1,38 @@
+VIX loaded from cache: data/vix_raw.csv (4934 rows, 2007-01-03 to 2026-06-30)
+=== GPD fits at candidate thresholds (residual upper tail) ===
+            u  n_u      xi   se_xi  sigma_star   se_ss
+q                                                     
+0.850  0.9789  740  0.0927  0.0388      0.6523  0.0707
+0.900  1.2827  494  0.1006  0.0479      0.6349  0.1017
+0.925  1.5224  370  0.1277  0.0581      0.5537  0.1341
+0.950  1.8533  247  0.1734  0.0776      0.4074  0.2000 
+
+=== Adopted GPD fit, residuals: u = 1.2827 (q = 0.9), n_u = 494 ===
+xi   = 0.1006  (se 0.0479)
+beta = 0.7640  (se 0.0501)
+
+=== Residual tail quantiles: GPD vs fitted t vs empirical ===
+(z_q feeds VaR_{t+1} = mu_{t+1} + sigma_{t+1} * z_q; ES analogous)
+          z_q    es_q  t_q (fitted t)  empirical
+0.950  1.8325  2.7436          1.5566     1.8533
+0.990  3.2640  4.3352          2.6116     3.1252
+0.995  3.9556  5.1042          3.1366     3.9529 
+
+=== GPD fits at candidate thresholds (raw-return upper tail) ===
+            u  n_u      xi   se_xi  sigma_star   se_ss
+q                                                     
+0.850  0.0640  740  0.1533  0.0431      0.0433  0.0053
+0.900  0.0860  494  0.1398  0.0514      0.0457  0.0076
+0.925  0.1039  370  0.1708  0.0638      0.0394  0.0104
+0.950  0.1273  247  0.1624  0.0796      0.0414  0.0152 
+
+=== Benchmark GPD fit, raw returns: u = 0.0860 (q = 0.9), n_u = 494 ===
+xi   = 0.1398  (se 0.0514)
+beta = 0.0577  (se 0.0039)
+
+=== Static return-scale tail measures (unconditional benchmark) ===
+          z_q    es_q  empirical
+0.950  0.1281  0.2020     0.1273
+0.990  0.2428  0.3354     0.2344
+0.995  0.3008  0.4028     0.3030 
+

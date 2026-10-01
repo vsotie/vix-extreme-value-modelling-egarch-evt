@@ -1,0 +1,23 @@
+=== Breach ratio (actual/expected) by regime, q=0.975: EGARCH-EVT / GARCH-EVT / Static POT ===
+  2010-12  days   509  expected  12.7  violations  15 /  13 /   9  ratio 1.18 / 1.02 / 0.71
+  2013-16  days  1008  expected  25.2  violations  22 /  28 /  25  ratio 0.87 / 1.11 / 0.99
+  2017-19  days   754  expected  18.9  violations  26 /  22 /  22  ratio 1.38 / 1.17 / 1.17
+  2020-21  days   505  expected  12.6  violations  15 /  13 /  16  ratio 1.19 / 1.03 / 1.27
+  2022-24  days   772  expected  19.3  violations  12 /  12 /   8  ratio 0.62 / 0.62 / 0.41
+  2025-26  days   385  expected   9.6  violations  10 /  12 /  12  ratio 1.04 / 1.25 / 1.25
+
+=== Mean pinball loss x1e4 by regime, q=0.975; EG-GA < 0 means EGARCH-EVT more accurate ===
+  2010-12  EGARCH 56.588  GARCH 54.031  Static 58.401 | EG-GA +2.556
+  2013-16  EGARCH 58.069  GARCH 59.636  Static 62.142 | EG-GA -1.567
+  2017-19  EGARCH 70.157  GARCH 70.991  Static 72.129 | EG-GA -0.833
+  2020-21  EGARCH 74.327  GARCH 78.562  Static 83.751 | EG-GA -4.235
+  2022-24  EGARCH 53.798  GARCH 54.119  Static 59.195 | EG-GA -0.321
+  2025-26  EGARCH 63.549  GARCH 66.206  Static 64.628 | EG-GA -2.657
+
+=== ES shortfall by regime: mean (realized-ES)/sigma on EGARCH-EVT breach days, q=0.975 ===
+  2010-12  breaches  15  mean_disc +0.232
+  2013-16  breaches  22  mean_disc +0.232
+  2017-19  breaches  26  mean_disc -0.051
+  2020-21  breaches  15  mean_disc +0.132
+  2022-24  breaches  12  mean_disc -0.040
+  2025-26  breaches  10  mean_disc +0.503
