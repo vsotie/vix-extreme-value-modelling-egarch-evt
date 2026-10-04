@@ -1,0 +1,14 @@
+Observed: xi(80th)=0.0745  xi(98th)=0.2300  difference=+0.1555
+
+Bootstrap of the JOINT distribution (resampling the residual series,
+so the nesting between the two estimates is reproduced in every replicate):
+  replicates: 800  (seed 20260814)
+  sd(xi_80)  = 0.0326   (observed-information se was 0.0325)
+  sd(xi_98)  = 0.1068   (observed-information se was 0.1412)
+  correlation(xi_80, xi_98) = +0.128
+  sd(difference) = 0.1076
+  if the two were INDEPENDENT: sqrt(sd1^2+sd2^2) = 0.1117
+
+  observed difference / sd(difference) = 1.45
+  two-sided bootstrap p-value for H0: xi is the same at both thresholds = 0.1437
+  95% bootstrap interval for the difference: [-0.1051, +0.3190]

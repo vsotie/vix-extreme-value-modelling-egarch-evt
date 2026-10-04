@@ -1,0 +1,11 @@
+series              level  exceed.  after exc.  expected  ind. LR p  theta (int.)            95% CI  theta (runs5)  runs5 if indep.
+raw returns         0.900      494          49      49.5     0.9395         0.794    [0.730, 0.865]          0.508            0.590
+raw returns         0.950      247          17      12.4     0.1873         0.808    [0.712, 0.925]          0.676            0.773
+raw returns         0.975      124           8       3.1     0.0168         0.518    [0.373, 0.862]          0.734            0.880
+std. residuals      0.900      494          45      49.5     0.4727         1.000    [1.000, 1.000]          0.609            0.590
+std. residuals      0.950      247          10      12.4     0.4640         1.000    [1.000, 1.000]          0.810            0.773
+std. residuals      0.975      124           6       3.1     0.1353         0.820    [0.634, 1.000]          0.879            0.880
+
+The bootstrap interval is capped at 1, so [1.000, 1.000] means every resample estimated theta = 1.
+'after exc.': exceedances whose previous day is also an exceedance. 'expected': (N-1) times the squared exceedance share.
+Both series use thresholds at their own 90th, 95th and 97.5th percentile of the N values (raw returns N = 4933, residuals N = 4932).

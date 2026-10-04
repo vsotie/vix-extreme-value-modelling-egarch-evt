@@ -1,0 +1,41 @@
+=== 1. Window kurtosis with and without the largest rises ===
+2007-2009 Global financial crisis  n   755  kurt   7.26  without largest day   5.09 (2007-02-27 +0.4960)  without two largest   4.91 (2008-09-29 +0.2963)
+2010-2012 Euro sovereign crisis    n   754  kurt   6.61  without largest day   5.82 (2011-08-08 +0.4055)  without two largest   5.66 (2011-08-04 +0.3032)
+2013-2016 Recovery                 n  1008  kurt   6.28  without largest day   5.86 (2016-06-24 +0.4010)  without two largest   5.49 (2015-08-21 +0.3815)
+2017-2019 Low volatility           n   754  kurt  15.14  without largest day   6.44 (2018-02-05 +0.7682)  without two largest   6.05 (2017-05-17 +0.3811)
+2020-2021 COVID-19                 n   505  kurt   7.93  without largest day   7.08 (2021-01-27 +0.4802)  without two largest   6.49 (2021-11-26 +0.4320)
+2022-2024 Tightening               n   772  kurt  13.13  without largest day   9.10 (2024-12-18 +0.5541)  without two largest   5.52 (2024-08-05 +0.5002)
+2025-2026 Recent                   n   385  kurt   7.69  without largest day   6.89 (2025-04-04 +0.4117)  without two largest   6.64 (2026-06-05 +0.3342)
+
+=== 2. Return s.d. and upper quantiles by window ===
+2007-2009 Global financial crisis  sd 0.0734  q0.99 0.2153  q0.995 0.2404  max +0.4960
+2010-2012 Euro sovereign crisis    sd 0.0732  q0.99 0.2285  q0.995 0.2747  max +0.4055
+2013-2016 Recovery                 sd 0.0768  q0.99 0.2317  q0.995 0.2959  max +0.4010
+2017-2019 Low volatility           sd 0.0824  q0.99 0.2517  q0.995 0.3410  max +0.7682
+2020-2021 COVID-19                 sd 0.0893  q0.99 0.3507  q0.995 0.3867  max +0.4802
+2022-2024 Tightening               sd 0.0687  q0.99 0.2035  q0.995 0.2199  max +0.5541
+2025-2026 Recent                   sd 0.0823  q0.99 0.2261  q0.995 0.3334  max +0.4117
+
+=== 3. Largest daily rises in the evaluation period (from 22 Dec 2010) ===
+ 1. 2018-02-05  r +0.7682  previous day +0.2508  regime 2017-19
+ 2. 2024-12-18  r +0.5541  previous day +0.0773  regime 2022-24
+ 3. 2024-08-05  r +0.5002  previous day +0.2297  regime 2022-24
+ 4. 2021-01-27  r +0.4802  previous day -0.0074  regime 2020-21
+ 5. 2021-11-26  r +0.4320  previous day -0.0422  regime 2020-21
+ 6. 2025-04-04  r +0.4117  previous day +0.3333  regime 2025-26
+ 7. 2011-08-08  r +0.4055  previous day +0.0107  regime 2010-12
+ 8. 2016-06-24  r +0.4010  previous day -0.2048  regime 2013-16
+ 9. 2020-06-11  r +0.3917  previous day +0.0000  regime 2020-21
+10. 2020-02-24  r +0.3822  previous day +0.0932  regime 2020-21
+11. 2015-08-21  r +0.3815  previous day +0.2272  regime 2013-16
+12. 2017-05-17  r +0.3811  previous day +0.0218  regime 2017-19
+Largest rises in the full sample: 2018-02-05 +0.7682, 2024-12-18 +0.5541, 2024-08-05 +0.5002, 2007-02-27 +0.4960, 2021-01-27 +0.4802
+
+=== 4. VIX level in the 21 sessions before each of the largest rises ===
+2018-02-05  close  37.32  previous close  17.31  max of the other 20  14.79  median of the 21  11.27  days of the 21 at or above 19: 0
+2024-12-18  close  27.62  previous close  15.87  max of the other 20  17.16  median of the 21  14.10  days of the 21 at or above 19: 0
+2024-08-05  close  38.57  previous close  23.39  max of the other 20  18.59  median of the 21  14.91  days of the 21 at or above 19: 1
+2021-01-27  close  37.21  previous close  23.02  max of the other 20  26.97  median of the 21  23.02  days of the 21 at or above 19: 21
+2021-11-26  close  28.62  previous close  18.58  max of the other 20  19.38  median of the 21  16.98  days of the 21 at or above 19: 2
+2025-04-04  close  45.31  previous close  30.02  max of the other 20  27.86  median of the 21  21.70  days of the 21 at or above 19: 17
+Sample median close 17.50

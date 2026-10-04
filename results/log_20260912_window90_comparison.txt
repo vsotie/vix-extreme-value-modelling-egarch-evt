@@ -1,0 +1,17 @@
+90-DAY WINDOW: estimator breakdown (3433 windows, 2012-2026)
+ EGARCH non-convergence: 36% (1229) | hard failures: 100 filter, 1 GPD
+ GPD exceedances k=9 every window | |xi|>1 (degenerate/ES undefined): 38% (1293)
+ nu collapsed to normal (>=499): 25 | nu<2.1: 392
+
+Violation rate vs target, EGARCH (n=90: the 3332 windows with a forecast):
+  q=0.95 n=90: 8.16% (target 5%)  Kupiec p=0.0000
+  q=0.95 n=1000: 5.13% (target 5%)  Kupiec p=0.7344
+  q=0.95 n=1500: 5.01% (target 5%)  Kupiec p=0.9781
+  q=0.99 n=90: 5.94% (target 1%)  Kupiec p=0.0000
+  q=0.99 n=1000: 0.93% (target 1%)  Kupiec p=0.6860
+  q=0.99 n=1500: 0.93% (target 1%)  Kupiec p=0.6860
+
+Forecast sd (99% VaR): n=90 diverges (inf; largest forecast 3.3e+162; degenerate GPD |xi|>1 gives near-infinite quantiles);
+  n=1000 sd=0.083, n=1500 sd=0.082. Pinball loss at n=90 is dominated by these outliers.
+
+saved Graphs/window_length_curve.png

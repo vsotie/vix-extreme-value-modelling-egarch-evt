@@ -1,0 +1,33 @@
+=== A: first 1,000 returns: 1000 returns, 2007-01-04 to 2010-12-21 ===
+  model                         LL       BIC  params
+  GARCH(1,1)-t const       -3289.4    6613.4       5
+  EGARCH(1,1)-t const      -3273.5    6588.5       6
+  EGARCH(1,1)-t AR(1)      -3265.6    6579.6       7
+  Lowest BIC: EGARCH(1,1)-t AR(1)
+  EGARCH-AR(1): theta +0.203 (t 6.4), AR(1) coefficient -0.122 (t -4.1), nu 4.88
+  Engle-Ng sign-bias test of the symmetric GARCH-t residuals: LM 5.86, p 0.1185
+  Adopted-model residuals: Ljung-Box (10 lags) p, |z| 0.299, z^2 0.802
+  GPD above the 90th percentile of the residuals: u 1.327, k 100, xi 0.019 (se 0.080), psi 0.805
+
+=== B: returns before 6 Oct 2014: 1952 returns, 2007-01-04 to 2014-10-03 ===
+  model                         LL       BIC  params
+  GARCH(1,1)-t const       -6421.3   12880.5       5
+  EGARCH(1,1)-t const      -6389.9   12825.2       6
+  EGARCH(1,1)-t AR(1)      -6380.3   12813.6       7
+  Lowest BIC: EGARCH(1,1)-t AR(1)
+  EGARCH-AR(1): theta +0.207 (t 8.0), AR(1) coefficient -0.099 (t -4.2), nu 4.86
+  Engle-Ng sign-bias test of the symmetric GARCH-t residuals: LM 3.51, p 0.3196
+  Adopted-model residuals: Ljung-Box (10 lags) p, |z| 0.502, z^2 0.436
+  GPD above the 90th percentile of the residuals: u 1.331, k 195, xi 0.059 (se 0.072), psi 0.752
+
+=== Full sample (Table 5.1): 4933 returns, 2007-01-04 to 2026-06-30 ===
+  model                         LL       BIC  params
+  GARCH(1,1)-t const      -16448.5   32939.5       5
+  EGARCH(1,1)-t const     -16357.7   32766.4       6
+  EGARCH(1,1)-t AR(1)     -16346.0   32751.4       7
+  Lowest BIC: EGARCH(1,1)-t AR(1)
+  EGARCH-AR(1): theta +0.223 (t 14.4), AR(1) coefficient -0.070 (t -4.6), nu 4.88
+  Engle-Ng sign-bias test of the symmetric GARCH-t residuals: LM 9.03, p 0.0289
+  Adopted-model residuals: Ljung-Box (10 lags) p, |z| 0.280, z^2 0.885
+  GPD above the 90th percentile of the residuals: u 1.283, k 494, xi 0.101 (se 0.048), psi 0.764
+

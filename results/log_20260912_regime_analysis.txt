@@ -1,0 +1,30 @@
+REGIME-BASED DATA OBSERVATION ON BACKTEST FORECASTS
+Source: results/forecasts.csv (3,933 one-day forecasts, 2010-2026)
+
+=== Breach ratio (actual/expected) by regime & model ===
+regime               days | q=0.95 EGEVT/GAEVT/Static    | q=0.99 EGEVT/GAEVT/Static
+Euro '11-12           509 | 1.10 / 1.02 / 0.90           | 1.57 / 0.79 / 0.98
+Recovery '13-16      1008 | 1.01 / 1.03 / 1.01           | 0.99 / 1.19 / 1.39
+Volmageddon '17-19    754 | 1.11 / 1.22 / 1.11           | 1.19 / 1.19 / 1.06
+COVID '20-21          505 | 1.07 / 1.11 / 1.11           | 1.19 / 0.99 / 1.58
+Tightening '22-24     772 | 0.93 / 0.93 / 0.67           | 0.39 / 0.39 / 0.52
+Recent '25-26         385 | 0.94 / 1.09 / 1.56           | 1.04 / 1.30 / 1.04
+
+=== EGARCH vs GARCH vs Static: mean pinball loss x1e4 (q=0.99) ===
+  Euro '11-12          EGARCH 27.796  GARCH 27.100  Static 30.620 | EG-GA +0.696 (GARCH better)
+  Recovery '13-16      EGARCH 30.600  GARCH 30.459  Static 33.402 | EG-GA +0.141 (GARCH better)
+  Volmageddon '17-19   EGARCH 35.829  GARCH 38.416  Static 39.531 | EG-GA -2.586 (EGARCH better)
+  COVID '20-21         EGARCH 41.236  GARCH 44.929  Static 43.893 | EG-GA -3.694 (EGARCH better)
+  Tightening '22-24    EGARCH 28.725  GARCH 30.148  Static 34.445 | EG-GA -1.423 (EGARCH better)
+  Recent '25-26        EGARCH 34.980  GARCH 35.429  Static 34.504 | EG-GA -0.449 (EGARCH better)
+
+=== ES shortfall by regime: mean (realized-ES)/sigma on EGARCH-EVT breach days, q=0.99 ===
+  (positive => ES too low; note small breach counts in late regimes)
+  Euro '11-12          breaches  8  mean_disc +0.287
+  Recovery '13-16      breaches 10  mean_disc +0.467
+  Volmageddon '17-19   breaches  9  mean_disc +0.111
+  COVID '20-21         breaches  6  mean_disc +0.508
+  Tightening '22-24    breaches  3  mean_disc +0.862
+  Recent '25-26        breaches  4  mean_disc +1.234
+
+Charts: Graphs/regime_egarch_vs_garch.png, Graphs/regime_breach_ratio.png

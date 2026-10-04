@@ -1,0 +1,38 @@
+=== 1. Derivation check: stored 99.5% values recovered from the 95% and 99% values ===
+  eevt  max |VaR error| 1.9e-14   max |ES error| 1.9e-14
+  gevt  max |VaR error| 1.6e-15   max |ES error| 1.8e-15
+  s     max |VaR error| 7.1e-14   max |ES error| 7.1e-14
+  et    max |VaR error| 4.4e-16
+  gt    max |VaR error| 3.3e-16
+  eevt  95% < 97.5% < 99% on every day: True
+  gevt  95% < 97.5% < 99% on every day: True
+  s     95% < 97.5% < 99% on every day: True
+  et    95% < 97.5% < 99% on every day: True
+  gt    95% < 97.5% < 99% on every day: True
+
+=== 2. Coverage at q=0.975 (T=3933, expected 98.3 violations) ===
+model        viol   rate%     p_uc   pi11%    p_ind     p_cc  consecutive pairs
+EGARCH-EVT    100   2.543   0.8645    5.00   0.1601   0.3675  5: 2011-10-31/2011-11-01, 2015-08-20/2015-08-21, 2018-02-02/2018-02-05, 2019-05-06/2019-05-07, 2025-04-03/2025-04-04
+GARCH-EVT     100   2.543   0.8645    5.00   0.1601   0.3675  5: 2015-08-20/2015-08-21, 2016-06-10/2016-06-13, 2018-02-02/2018-02-05, 2024-08-02/2024-08-05, 2025-04-03/2025-04-04
+Static-POT     92   2.339   0.5138    5.43   0.0876   0.1879  5: 2015-08-20/2015-08-21, 2015-08-21/2015-08-24, 2018-02-02/2018-02-05, 2024-08-02/2024-08-05, 2025-04-03/2025-04-04
+EGARCH-t      175   4.450   0.0000    5.14   0.6569   0.0000  9: 2011-10-31/2011-11-01, 2011-12-27/2011-12-28, 2015-08-20/2015-08-21, 2015-08-21/2015-08-24, 2016-06-10/2016-06-13, 2018-02-02/2018-02-05, 2019-05-06/2019-05-07, 2024-08-02/2024-08-05, 2025-04-03/2025-04-04
+GARCH-t       170   4.322   0.0000    4.71   0.8046   0.0000  8: 2011-03-15/2011-03-16, 2015-08-20/2015-08-21, 2016-06-10/2016-06-13, 2018-02-02/2018-02-05, 2019-05-06/2019-05-07, 2020-01-24/2020-01-27, 2024-08-02/2024-08-05, 2025-04-03/2025-04-04
+
+=== 3. Pinball loss at q=0.975 (mean x1e4; lower is better) ===
+  EGARCH-EVT=61.9803  GARCH-EVT=63.0777  Static-POT=66.0121  EGARCH-t=64.2119  GARCH-t=65.3302
+  EGARCH-EVT vs GARCH-EVT: advantage 1.74%  DM -1.433  p 0.1520  (negative favours EGARCH-EVT)
+
+=== 4. McNeil-Frey bootstrap ES test (B=10,000; one-sided, small p => ES too low) ===
+  Published sequence repeated with seed 20260901 (must match log_20260901_backtest_eval.txt):
+    EGARCH-EVT q=0.95: n_viol=202  mean_discrepancy=0.0658  p=0.1945
+    EGARCH-EVT q=0.99: n_viol=40  mean_discrepancy=0.4632  p=0.0102
+    EGARCH-EVT q=0.995: n_viol=26  mean_discrepancy=0.4326  p=0.0279
+    GARCH-EVT q=0.95: n_viol=209  mean_discrepancy=0.0149  p=0.4168
+    GARCH-EVT q=0.99: n_viol=38  mean_discrepancy=0.4584  p=0.0205
+    GARCH-EVT q=0.995: n_viol=26  mean_discrepancy=0.3271  p=0.093
+  97.5% tests, reseeded with 20260901:
+    EGARCH-EVT q=0.975: n_viol=100  mean_discrepancy=0.1379  p=0.1289  (Monte Carlo s.e. 0.0034)
+    GARCH-EVT q=0.975: n_viol=100  mean_discrepancy=0.0948  p=0.2318  (Monte Carlo s.e. 0.0042)
+
+=== 5. 97.5% ES against 99% VaR, EGARCH-EVT (both one-day log returns) ===
+  ES_0.975 / VaR_0.99: median 1.0335  5th pct 0.9991  95th pct 1.0681

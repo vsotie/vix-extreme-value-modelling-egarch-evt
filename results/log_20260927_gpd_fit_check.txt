@@ -1,0 +1,28 @@
+Residual quantiles (ends of the plotted grids): 0.50: -0.0713  0.80: 0.7501  0.90: 1.2827  0.98: 2.6109  0.99: 3.1252
+
+=== 1. GPD QQ plot: u = 1.2827, k = 494, xi = 0.1006, psi = 0.7640 ===
+ rank  fitted  observed  obs-fitted  share of residuals at or above
+  480   4.519     4.510      -0.009  0.00304
+  481   4.597     4.543      -0.054  0.00284
+  482   4.682     4.650      -0.032  0.00264
+  483   4.775     4.688      -0.087  0.00243
+  484   4.877     5.186      +0.309  0.00223
+  485   4.990     5.521      +0.531  0.00203
+  486   5.117     5.894      +0.777  0.00182
+  487   5.262     5.995      +0.733  0.00162
+  488   5.430     6.243      +0.813  0.00142
+  489   5.629     6.267      +0.639  0.00122
+  490   5.872     6.743      +0.871  0.00101
+  491   6.184     6.953      +0.769  0.00081
+  492   6.615     7.088      +0.473  0.00061
+  493   7.296     7.404      +0.107  0.00041
+  494   8.887     7.457      -1.429  0.00020
+fitted quantile in (3.2, 4.8]: 42 points, 6 above the diagonal, 36 below; largest |obs - fitted| 0.178
+fitted quantile in (4.8, inf]: 11 points, 10 above the diagonal, 1 below; largest |obs - fitted| 1.429
+
+=== 2. Modified scale psi* = psi_u - xi*u: intersection of 95% intervals above each u0 ===
+  from the 0.800 quantile (37 grid points): [+0.5917, +0.7529] -> NON-EMPTY
+  from the 0.850 quantile (27 grid points): [+0.5138, +0.7529] -> NON-EMPTY
+  from the 0.900 quantile (17 grid points): [+0.4356, +0.7995] -> NON-EMPTY
+  from the 0.950 quantile (7 grid points): [+0.1415, +0.7995] -> NON-EMPTY
+  psi* estimate: 0.6966 at q = 0.800, 0.6349 at q = 0.900, 0.1727 at q = 0.980

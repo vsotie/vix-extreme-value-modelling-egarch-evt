@@ -1,0 +1,12 @@
+GPD (Coles Thm 4.1): u=1.2827  k=494  xi=0.1006 (se 0.0479)  sigma=0.7640
+
+LR test H0: xi=0 (exponential excesses, Gumbel domain)
+  ll(GPD)=-410.7473  ll(exp)=-413.5353  D=5.5759  p=0.0182
+  Wald: t = 2.100, p = 0.0357
+  95% profile-likelihood CI for xi: [0.0154, 0.2041]
+  95% Wald CI for xi:               [0.0067, 0.1945]
+
+=== Formula check: my z_q vs Coles Eq (4.13) x_m = u + (sigma/xi)[(m*zeta_u)^xi - 1] ===
+  q=0.95: mine=1.832535  Coles(4.13) with m=1/(1-q)=1.832535  diff=1.78e-15
+  q=0.99: mine=3.264022  Coles(4.13) with m=1/(1-q)=3.264022  diff=0.00e+00
+  q=0.995: mine=3.955643  Coles(4.13) with m=1/(1-q)=3.955643  diff=0.00e+00

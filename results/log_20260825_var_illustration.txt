@@ -1,0 +1,20 @@
+VIX loaded from cache: data/vix_raw.csv (4934 rows, 2007-01-03 to 2026-06-30)
+GPD: u=1.2827 k=494 xi=0.1006 beta=0.7640
+z_0.95 = 1.8325   ES_0.95 = 2.7436
+
+Conditional volatility, return units:
+  calm (10th pct)        sigma = 0.0505  (5.05%)
+  median                 sigma = 0.0670  (6.70%)
+  turbulent (90th pct)   sigma = 0.1024  (10.24%)
+
+=== VaR_0.95 and ES_0.95 by volatility state (mean term at r_t = 0) ===
+(mu_next = -0.00190 = -0.19%, contributes about -0.19 pp)
+  state                     sigma   VaR_0.95    ES_0.95   u in returns
+  calm (10th pct)           5.05%      9.06%     13.65%          6.28%
+  median                    6.70%     12.08%     18.19%          8.40%
+  turbulent (90th pct)     10.24%     18.58%     27.92%         12.95%
+
+=== Sanity check on real dates ===
+  2017-10-05: sigma=5.23%  VaR_0.95=9.39%
+  2020-03-16: sigma=17.89%  VaR_0.95=32.60%
+  2025-04-07: sigma=20.75%  VaR_0.95=37.84%

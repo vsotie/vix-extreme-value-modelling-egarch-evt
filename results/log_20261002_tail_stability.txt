@@ -1,0 +1,75 @@
+Residuals: 4932 (2007-01-05 to 2026-06-30); u = 1.2827; exceedances 494; GPD xi = 0.1006 (se 0.0479), psi = 0.7640
+Adopted filter: theta(gamma[1]) = 0.2226, nu = 4.884
+
+=== (a) October 2014: returns and residuals around the change ===
+  date           close  log return  std. residual
+  2014-09-29     15.98      0.0733          0.772
+  2014-09-30     16.31      0.0204          0.277
+  2014-10-01     16.71      0.0242          0.281
+  2014-10-02     16.16     -0.0335         -0.308
+  2014-10-03     14.55     -0.1049         -1.168
+  2014-10-06     15.46      0.0607          0.701
+  2014-10-07     17.20      0.1067          1.343
+  2014-10-08     15.11     -0.1296         -1.227
+  2014-10-09     18.76      0.2164          2.468
+  2014-10-10     21.24      0.1242          1.212
+  2014-10-13     24.64      0.1485          1.214
+  2014-10-14     22.79     -0.0780         -0.449
+  2014-10-15     26.25      0.1413          1.045
+  2014-10-16     25.20     -0.0408         -0.202
+  2014-10-17     21.99     -0.1363         -1.040
+  2014-10-20     18.57     -0.1690         -1.548
+  2014-10-21     16.08     -0.1440         -1.610
+  2014-10-22     17.87      0.1055          1.210
+  2014-10-23     16.53     -0.0779         -0.744
+  2014-10-24     16.11     -0.0257         -0.352
+  Residual on the first day under the new methodology (6 Oct 2014): 0.701
+  Mean |residual|: five days before 0.561, five days from the change 1.390, whole sample 0.735
+  Largest |residual| in the 20 sessions from 6 Oct 2014: 2.468 on 2014-10-09 (rank 122 of 4932 by |residual|)
+
+  Pre-change returns: 1952, post-change: 2981
+  pre   residuals: sd 0.973, skew 1.147, kurtosis (Pearson) 6.822; returns: mean +0.0001, sd 0.0721, kurtosis 6.935
+        Ljung-Box (10 lags) p-value: |residual| 0.517, residual^2 0.434
+  post  residuals: sd 1.026, skew 1.340, kurtosis (Pearson) 8.137; returns: mean +0.0000, sd 0.0804, kurtosis 10.322
+        Ljung-Box (10 lags) p-value: |residual| 0.188, residual^2 0.810
+
+=== Tail of the pooled residuals before and after 6 October 2014 ===
+  part                       n   k>u    exp  binom p      xi     se     psi   q97.5     q99 ES99(emp)  k>q95  k>q99
+  before 6 Oct 2014       1951   195  195.1    1.000   0.040  0.068   0.769   2.252   3.119     4.007     94     20
+  from 6 Oct 2014         2981   299  298.1    0.951   0.136  0.066   0.762   2.441   3.109     4.566    153     30
+  Parts with at least 25 exceedances: 2
+  LR, common (xi, psi) against separate:              1.572 on  2 df, p = 0.456
+  LR, common xi (separate psi) against separate:      0.993 on  1 df, p = 0.319
+  LR, common (xi, psi) against common xi:             0.578 on  1 df, p = 0.447
+  Chi-square test of equal exceedance rates across parts: chi2 = 0.00 on 1 df, p = 1.000
+
+  Filter refitted separately (AR(1)-EGARCH(1,1)-t on the returns of each part):
+   before 6 Oct 2014  n= 1952  theta +0.207 (t 8.0)  alpha 0.051  beta 0.951  nu 4.86  GPD at own 90th pct: k=195, xi 0.059 (se 0.072)
+   from 6 Oct 2014    n= 2981  theta +0.236 (t 11.5)  alpha 0.082  beta 0.941  nu 4.94  GPD at own 90th pct: k=298, xi 0.137 (se 0.066)
+
+  EGARCH-EVT out-of-sample violation rates before and after 6 October 2014:
+  forecasts before: 952, from the change: 2981
+  level  part                   n  viol    exp  rate %  Kupiec p   Fisher exact p (equal rates)
+  0.95   before               952    48   47.6    5.04     0.953
+  0.95   from change         2981   154  149.1    5.17     0.679   0.933
+  0.975  before               952    23   23.8    2.42     0.867
+  0.975  from change         2981    77   74.5    2.58     0.773   0.906
+  0.99   before               952    13    9.5    1.37     0.283
+  0.99   from change         2981    27   29.8    0.91     0.599   0.264
+  0.995  before               952     9    4.8    0.95     0.083
+  0.995  from change         2981    17   14.9    0.57     0.595   0.249
+
+=== Tail of the pooled residuals across the seven windows of Table 3.3 ===
+  part                       n   k>u    exp  binom p      xi     se     psi   q97.5     q99 ES99(emp)  k>q95  k>q99
+  2007-2009 GFC            754    77   75.4    0.855   0.062  0.100   0.734   2.296   3.030     3.902     38      6
+  2010-2012 Euro           754    80   75.4    0.585  -0.091  0.135   0.830   2.290   3.161     3.727     38      8
+  2013-2016 Recovery      1008   106  100.8    0.564   0.136  0.110   0.658   2.246   3.115     4.185     46     11
+  2017-2019 Low-vol        754    75   75.4    1.000   0.094  0.136   0.882   2.654   3.313     4.661     41     11
+  2020-2021 COVID          505    51   50.5    0.941   0.090  0.153   1.027   2.640   4.173     5.333     31      6
+  2022-2024 Tightening     772    70   77.2    0.435   0.045  0.098   0.763   2.277   2.865     3.755     37      3
+  2025-2026 Recent         385    35   38.5    0.610   0.348  0.262   0.611   2.355   3.194     4.735     16      5
+  Parts with at least 25 exceedances: 7
+  LR, common (xi, psi) against separate:             10.543 on 12 df, p = 0.568
+  LR, common xi (separate psi) against separate:      3.321 on  6 df, p = 0.768
+  LR, common (xi, psi) against common xi:             7.222 on  6 df, p = 0.301
+  Chi-square test of equal exceedance rates across parts: chi2 = 1.75 on 6 df, p = 0.941

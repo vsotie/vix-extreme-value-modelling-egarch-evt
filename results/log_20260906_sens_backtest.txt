@@ -1,0 +1,20 @@
+
+DONE 3933 forecasts in 8.0 min
+
+=== V-a: THRESHOLD sensitivity, EGARCH(1,1,1)-EVT ===
+ q=0.95 (target 5.0%, exp 196.7):
+   thr=0.850 (k~150): viol=201 rate=5.111% Kupiec_p=0.7511 pinball=99.5145
+   thr=0.875 (k~125): viol=201 rate=5.111% Kupiec_p=0.7511 pinball=99.5746
+   thr=0.900 (k~100): viol=202 rate=5.136% Kupiec_p=0.6967 pinball=99.5782
+   thr=0.925 (k~75): viol=203 rate=5.161% Kupiec_p=0.6439 pinball=99.5644
+ q=0.99 (target 1.0%, exp 39.3):
+   thr=0.850 (k~150): viol=40 rate=1.017% Kupiec_p=0.9147 pinball=32.6459
+   thr=0.875 (k~125): viol=40 rate=1.017% Kupiec_p=0.9147 pinball=32.6824
+   thr=0.900 (k~100): viol=40 rate=1.017% Kupiec_p=0.9147 pinball=32.6660
+   thr=0.925 (k~75): viol=41 rate=1.042% Kupiec_p=0.7904 pinball=32.7135
+
+=== V-b: LAG-STRUCTURE sensitivity, EGARCH(1,1,1) vs EGARCH(2,1,2), thr 0.90 ===
+ q=0.95: (1,1,1) viol=202 Kupiec_p=0.697 pinball=99.5782 | (2,1,2) viol=205 Kupiec_p=0.544 pinball=99.5116 | DM(alt-base) -0.468 p 0.6396
+ q=0.99: (1,1,1) viol=40 Kupiec_p=0.915 pinball=32.6660 | (2,1,2) viol=40 Kupiec_p=0.915 pinball=32.6314 | DM(alt-base) -0.186 p 0.8528
+
+(DM ~0 / p>>0.05 => lag structure does not change forecast performance)

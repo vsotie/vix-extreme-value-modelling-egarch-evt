@@ -1,0 +1,30 @@
+97.5% SENSITIVITY RERUN: 3933 forecasts in 6.0 min
+Python 3.13.13 (Linux), arch 8.0.0, scipy 1.18.0
+
+=== 1. Check against the published sensitivity run (results/sens_forecasts.csv) ===
+  base_0.850_0.95    days differing   532  rel diff > 1e-6 on  73  max rel diff 4.1e-04  violation flips 0
+  base_0.850_0.99    days differing   532  rel diff > 1e-6 on  69  max rel diff 7.7e-03  violation flips 0
+  base_0.875_0.95    days differing   532  rel diff > 1e-6 on  73  max rel diff 1.3e-02  violation flips 0
+  base_0.875_0.99    days differing   532  rel diff > 1e-6 on  69  max rel diff 1.7e-02  violation flips 0
+  base_0.900_0.95    days differing   532  rel diff > 1e-6 on  74  max rel diff 5.6e-03  violation flips 0
+  base_0.900_0.99    days differing   532  rel diff > 1e-6 on  71  max rel diff 6.9e-03  violation flips 0
+  base_0.925_0.95    days differing   532  rel diff > 1e-6 on  70  max rel diff 4.7e-03  violation flips 0
+  base_0.925_0.99    days differing   532  rel diff > 1e-6 on  72  max rel diff 1.6e-02  violation flips 0
+  alt_0.95           days differing   545  rel diff > 1e-6 on  94  max rel diff 1.4e-01  violation flips 0
+  alt_0.99           days differing   545  rel diff > 1e-6 on  91  max rel diff 1.2e-01  violation flips 0
+  days identical in every published column: 2954 of 3933
+
+=== 2. Check against the 97.5% forecasts derived from the main backtest (results/forecasts_975.csv) ===
+  VaR days differing 3537  rel diff > 1e-6 on 71  max rel diff 2.4e-03  violation flips 0
+  ES  days differing 3543  rel diff > 1e-6 on 69  max rel diff 1.3e-02
+  (differences of the last binary digits come from deriving by algebra rather than computing directly;
+   those above 1e-6 are the optimiser-tolerance days documented in log_20260927_backtest_rerun.txt)
+
+=== 3. Threshold sensitivity at q=0.975, EGARCH(1,1,1)-EVT (exp 98.3 violations) ===
+  thr=0.850: viol=101 rate=2.568% Kupiec_p=0.7856 pinball=61.8822  ES test: mean_disc 0.1368 p 0.1271
+  thr=0.875: viol=103 rate=2.619% Kupiec_p=0.6356 pinball=61.9787  ES test: mean_disc 0.1118 p 0.1730
+  thr=0.900: viol=100 rate=2.543% Kupiec_p=0.8645 pinball=61.9804  ES test: mean_disc 0.1379 p 0.1289
+  thr=0.925: viol=104 rate=2.644% Kupiec_p=0.5658 pinball=61.9362  ES test: mean_disc 0.1095 p 0.1768
+
+=== 4. Lag structure at q=0.975: EGARCH(1,1,1) vs EGARCH(2,1,2), threshold 0.90 ===
+  (1,1,1) viol=100 pinball=61.9804 | (2,1,2) viol=101 pinball=61.9497 | DM(alt-base) -0.185 p 0.8530

@@ -1,0 +1,74 @@
+How much data sits under each part of the residual MRL plot
+     u  quantile    n_u  % of sample  mean excess  CI halfwidth
+  0.00    0.5333   2302        46.7%       0.8566        0.0351
+  0.50    0.7376   1294        26.2%       0.8395        0.0477
+  0.75    0.7999    987        20.0%       0.8134        0.0555
+  1.00    0.8534    723        14.7%       0.8173        0.0667
+  1.28    0.9000    493        10.0%       0.8511        0.0841
+  1.50    0.9232    379         7.7%       0.8593        0.0987
+  2.00    0.9576    209         4.2%       0.8827        0.1433
+  2.20    0.9692    152         3.1%       0.9795        0.1751
+  2.50    0.9779    109         2.2%       1.0053        0.2151
+  2.75    0.9834     82         1.7%       1.0439        0.2569
+  3.00    0.9872     63         1.3%       1.0770        0.3012
+  3.13    0.9899     50         1.0%       1.2125        0.3433
+
+Width of the 95% band, relative to the band at u=1.0:
+  u= 1.0: halfwidth 0.0667  =  1.00x the width at u=1.0   (n_u=723)
+  u= 1.5: halfwidth 0.0987  =  1.48x the width at u=1.0   (n_u=379)
+  u= 2.0: halfwidth 0.1433  =  2.15x the width at u=1.0   (n_u=209)
+  u= 2.5: halfwidth 0.2151  =  3.23x the width at u=1.0   (n_u=109)
+  u= 3.0: halfwidth 0.3012  =  4.52x the width at u=1.0   (n_u=63)
+
+Overlapping-data effect: fraction of the u=1.0 exceedances still present at higher u
+  u=1.283:  493 obs, i.e.  68.2% of the u=1.0 set — the two estimates share every one of them
+  u=1.500:  379 obs, i.e.  52.4% of the u=1.0 set — the two estimates share every one of them
+  u=2.000:  209 obs, i.e.  28.9% of the u=1.0 set — the two estimates share every one of them
+  u=2.500:  109 obs, i.e.  15.1% of the u=1.0 set — the two estimates share every one of them
+  u=3.000:   63 obs, i.e.   8.7% of the u=1.0 set — the two estimates share every one of them
+
+=== Is the low region actually DECREASING? (a positive-xi GPD forbids it) ===
+Theory: e(u) = (beta_u0 + xi*u)/(1-xi), slope xi/(1-xi) = +0.112 for xi=0.1006
+  u=-0.10  n_u= 2544  e_n(u)=0.8701
+  u=-0.05  n_u= 2412  e_n(u)=0.8663  down
+  u= 0.00  n_u= 2302  e_n(u)=0.8566  down
+  u= 0.05  n_u= 2180  e_n(u)=0.8533  down
+  u= 0.10  n_u= 2069  e_n(u)=0.8476  down
+  u= 0.15  n_u= 1958  e_n(u)=0.8443  down
+  u= 0.20  n_u= 1862  e_n(u)=0.8366  down
+  u= 0.25  n_u= 1742  e_n(u)=0.8424  up
+  u= 0.30  n_u= 1657  e_n(u)=0.8343  down
+  u= 0.35  n_u= 1571  e_n(u)=0.8288  down
+  u= 0.40  n_u= 1483  e_n(u)=0.8265  down
+  u= 0.45  n_u= 1399  e_n(u)=0.8246  down
+  u= 0.50  n_u= 1294  e_n(u)=0.8395  up
+  u= 0.55  n_u= 1222  e_n(u)=0.8376  down
+  u= 0.60  n_u= 1160  e_n(u)=0.8311  down
+  u= 0.65  n_u= 1099  e_n(u)=0.8258  down
+  u= 0.70  n_u= 1047  e_n(u)=0.8155  down
+  u= 0.75  n_u=  987  e_n(u)=0.8134  down
+  u= 0.80  n_u=  935  e_n(u)=0.8072  down
+  u= 0.85  n_u=  866  e_n(u)=0.8197  up
+  u= 0.90  n_u=  814  e_n(u)=0.8204  up
+  u= 0.95  n_u=  772  e_n(u)=0.8136  down
+  u= 1.00  n_u=  723  e_n(u)=0.8173  up
+  u= 1.05  n_u=  684  e_n(u)=0.8123  down
+  u= 1.10  n_u=  637  e_n(u)=0.8206  up
+  u= 1.15  n_u=  593  e_n(u)=0.8299  up
+  u= 1.20  n_u=  561  e_n(u)=0.8259  down
+  u= 1.25  n_u=  521  e_n(u)=0.8375  up
+  u= 1.30  n_u=  483  e_n(u)=0.8516  up
+  u= 1.35  n_u=  453  e_n(u)=0.8562  up
+
+=== Slope of e_n(u) by region, against the theoretical +0.112 ===
+  below the turning point           : slope = -0.0534  (42 grid points)
+  0.75 to 1.30                      : slope = +0.0549  (28 grid points)
+  1.00 to 2.00                      : slope = +0.0860  (51 grid points)
+  2.00 to 3.10 (the "clean" part)   : slope = +0.1964  (56 grid points)
+
+=== Is the rise over 2.0-3.0 bigger than noise? ===
+  u=2.0: e_n=0.8827  95% halfwidth=0.1433  n_u=209
+  u=3.0: e_n=1.0770  95% halfwidth=0.3012  n_u=63
+  observed rise over that span = +0.1944
+  rise predicted by xi=0.1006  = +0.1119
+  halfwidth at the right end   = 0.3012  -> rise is inside it

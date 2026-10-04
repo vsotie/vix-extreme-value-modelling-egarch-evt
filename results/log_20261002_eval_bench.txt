@@ -1,0 +1,25 @@
+FHS uses the EGARCH-EVT filter: volatility forecast differs from the stored e_sig on 0 days (max relative difference 0.0e+00; optimiser tolerance, see log_20260927_backtest_rerun.txt)
+Skewed-t shape: median nu 5.93, median lambda 0.360 (lambda > 0: right-skewed); lambda range 0.245 to 0.471
+
+model             level  viol   exp  rate%  Kupiec p  pairs  ind p   cc p   pinball(1e-4)  DM vs EGARCH-EVT (stat, p)   ES: viol  mean D     p
+EGARCH-EVT        0.950   202 196.7   5.14    0.6967    10  0.9012 0.9197        99.578   -                                202   +0.066  0.1945
+FHS               0.950   206 196.7   5.24    0.4971    11  0.9470 0.7923        99.781   +1.627, 0.1037                   206   +0.055  0.2312
+EGARCH-skewed-t   0.950   194 196.7   4.93    0.8459     9  0.8445 0.9626        99.710   +0.404, 0.6865                   194   +0.083  0.1418
+EGARCH-t          0.950   285 196.7   7.25    0.0000    21  0.9354 0.0000       101.102   +1.956, 0.0505              -
+
+EGARCH-EVT        0.975   100  98.3   2.54    0.8645     5  0.1601 0.3675        61.980   -                                100   +0.138  0.1289
+FHS               0.975   107  98.3   2.72    0.3823     6  0.1012 0.1781        62.043   +0.392, 0.6951                   107   +0.083  0.2358
+EGARCH-skewed-t   0.975    99  98.3   2.52    0.9451     4  0.3661 0.6631        62.145   +0.700, 0.4842                    99   +0.143  0.1200
+EGARCH-t          0.975   175  98.3   4.45    0.0000     9  0.6569 0.0000        64.212   +2.472, 0.0134              -
+
+EGARCH-EVT        0.990    40  39.3   1.02    0.9147     0  0.3645 0.6591        32.666   -                                 40   +0.463  0.0107
+FHS               0.990    49  39.3   1.25    0.1356     0  0.2661 0.1769        32.792   +0.455, 0.6492                    49   +0.112  0.2664
+EGARCH-skewed-t   0.990    39  39.3   0.99    0.9578     0  0.3767 0.6756        32.643   -0.188, 0.8511                    39   +0.397  0.0249
+EGARCH-t          0.990    84  39.3   2.14    0.0000     4  0.1452 0.0000        34.089   +1.766, 0.0775              -
+
+EGARCH-EVT        0.995    26  19.7   0.66    0.1724     0  0.5563 0.3316        19.815   -                                 26   +0.433  0.0286
+FHS               0.995    27  19.7   0.69    0.1167     0  0.5412 0.2423        20.099   +1.039, 0.2988                    27   +0.297  0.0938
+EGARCH-skewed-t   0.995    25  19.7   0.64    0.2472     0  0.5716 0.4363        19.702   -0.737, 0.4608                    25   +0.275  0.1185
+EGARCH-t          0.995    46  19.7   1.17    0.0000     0  0.2967 0.0000        21.248   +1.927, 0.0540              -
+
+DM statistic: mean pinball loss of the benchmark minus that of EGARCH-EVT; negative favours the benchmark.

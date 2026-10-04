@@ -1,0 +1,9 @@
+n = 3933 forecasts, 2010-12-22 to 2026-06-30
+ level  benchmark  VaR ratio  ES ratio
+  0.99        FHS      0.961     1.004
+  0.99   skewed-t      1.000     1.013
+ 0.995        FHS      0.985     1.014
+ 0.995   skewed-t      1.001     1.025
+Skewed-t volatility forecast / adopted-filter forecast: mean 1.020, 5th-95th percentile [0.955, 1.100], correlation 0.9941
+Skewed-t windows refitted after a non-converged default fit: 2011-12-23
+Skewed-t windows not converged: none

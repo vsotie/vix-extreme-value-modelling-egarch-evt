@@ -1,0 +1,20 @@
+Is the in-sample violation count anything other than a restatement of
+the residual quantile comparison?  Claim: for a CONDITIONAL model,
+   r_t > mu_t + sigma_t * z_q   <=>   z_hat_t > z_q
+so counting VaR violations IS counting residuals above z_q.
+
+VIX loaded from cache: data/vix_raw.csv (4934 rows, 2007-01-03 to 2026-06-30)
+q=0.95:  VaR violations = 255   residuals above z_q = 255   identical: True
+        z_q(GPD) = 1.8325  vs empirical residual quantile 1.8533   -> rate 5.17% vs target 5.0%
+q=0.99:  VaR violations = 41   residuals above z_q = 41   identical: True
+        z_q(GPD) = 3.2640  vs empirical residual quantile 3.1252   -> rate 0.83% vs target 1.0%
+q=0.995:  VaR violations = 25   residuals above z_q = 25   identical: True
+        z_q(GPD) = 3.9556  vs empirical residual quantile 3.9529   -> rate 0.51% vs target 0.5%
+
+CONCLUSION: for the conditional models the in-sample coverage test is
+algebraically the SAME statistic as the residual quantile comparison
+already reported. It cannot disagree with it. No independent evidence.
+
+The static benchmark is NOT equivalent (constant VaR vs actual returns),
+but its clustered violations follow from volatility clustering, which
+Ch. 3 already establishes (Ljung-Box on |r| at lags 5, 10, 20, p <= 4.2e-137).

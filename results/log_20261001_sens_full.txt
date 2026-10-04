@@ -1,0 +1,67 @@
+FULL SENSITIVITY RERUN, ALL FOUR LEVELS: 3933 forecasts in 5.4 min
+Python 3.13.13 (Linux), arch 8.0.0, scipy 1.18.0
+
+=== 1. Checks against the published files (columns shared with this run) ===
+  file / column                         days differing  rel diff > 1e-6  max rel diff  violation flips
+  sens_forecasts    base_0.850_0.95                 532               73       4.1e-04                0
+  sens_forecasts    base_0.850_0.99                 532               69       7.7e-03                0
+  sens_forecasts    base_0.875_0.95                 532               73       1.3e-02                0
+  sens_forecasts    base_0.875_0.99                 532               69       1.7e-02                0
+  sens_forecasts    base_0.900_0.95                 532               74       5.6e-03                0
+  sens_forecasts    base_0.900_0.99                 532               71       6.9e-03                0
+  sens_forecasts    base_0.925_0.95                 532               70       4.7e-03                0
+  sens_forecasts    base_0.925_0.99                 532               72       1.6e-02                0
+  sens_forecasts    alt_0.95                        545               94       1.4e-01                0
+  sens_forecasts    alt_0.99                        545               91       1.2e-01                0
+  sens975_forecasts sig                               0                0       0.0e+00                0
+  sens975_forecasts base_0.850_0.975                  0                0       0.0e+00                0
+  sens975_forecasts baseES_0.850_0.975                0                0       0.0e+00                0
+  sens975_forecasts base_0.875_0.975                  0                0       0.0e+00                0
+  sens975_forecasts baseES_0.875_0.975                0                0       0.0e+00                0
+  sens975_forecasts base_0.900_0.975                  0                0       0.0e+00                0
+  sens975_forecasts baseES_0.900_0.975                0                0       0.0e+00                0
+  sens975_forecasts base_0.925_0.975                  0                0       0.0e+00                0
+  sens975_forecasts baseES_0.925_0.975                0                0       0.0e+00                0
+  sens975_forecasts alt_0.975                         0                0       0.0e+00                0
+  forecasts.csv     eevt_VaR_0.95                   532               74       5.6e-03                0
+  forecasts.csv     eevt_ES_0.95                    532               72       9.6e-03                -
+  forecasts.csv     eevt_VaR_0.99                   532               71       6.9e-03                0
+  forecasts.csv     eevt_ES_0.99                    532               74       2.3e-02                -
+  forecasts.csv     eevt_VaR_0.995                  532               71       1.4e-02                0
+  forecasts.csv     eevt_ES_0.995                   532               78       3.2e-02                -
+  (differences above 1e-6 are the optimiser-tolerance days documented in log_20260927_backtest_rerun.txt)
+
+=== 2. Threshold sensitivity, EGARCH(1,1,1)-EVT, all four levels ===
+  q      thr    viol   exp   Kupiec_p  pairs  ind_p   cc_p    pinball(x1e4)  ES: mean_disc  ES p
+  0.95   0.850   201  196.7    0.7511     10  0.9277  0.9470       99.5145         0.0716  0.1794
+  0.95   0.875   201  196.7    0.7511     10  0.9277  0.9470       99.5749         0.0746  0.1662
+  0.95   0.900   202  196.7    0.6967     10  0.9012  0.9197       99.5784         0.0658  0.1945
+  0.95   0.925   203  196.7    0.6439     11  0.8666  0.8861       99.5645         0.0671  0.1834
+
+  0.975  0.850   101   98.3    0.7856      6  0.0617  0.1682       61.8822         0.1368  0.1271
+  0.975  0.875   103   98.3    0.6356      7  0.0236  0.0690       61.9787         0.1118  0.1730
+  0.975  0.900   100   98.3    0.8645      5  0.1601  0.3675       61.9804         0.1379  0.1289
+  0.975  0.925   104   98.3    0.5658      6  0.0796  0.1824       61.9362         0.1095  0.1768
+
+  0.99   0.850    40   39.3    0.9147      0  0.3645  0.6591       32.6460         0.4885  0.0055
+  0.99   0.875    40   39.3    0.9147      0  0.3645  0.6591       32.6826         0.4509  0.0120
+  0.99   0.900    40   39.3    0.9147      0  0.3645  0.6591       32.6660         0.4632  0.0107
+  0.99   0.925    41   39.3    0.7904      0  0.3526  0.6267       32.7137         0.4188  0.0143
+
+  0.995  0.850    26   19.7    0.1724      0  0.5563  0.3316       19.7967         0.4422  0.0234
+  0.995  0.875    26   19.7    0.1724      0  0.5563  0.3316       19.8222         0.3979  0.0419
+  0.995  0.900    26   19.7    0.1724      0  0.5563  0.3316       19.8147         0.4326  0.0286
+  0.995  0.925    26   19.7    0.1724      0  0.5563  0.3316       19.8565         0.3545  0.0622
+
+=== 3. Lag structure, EGARCH(1,1,1) vs EGARCH(2,1,2), threshold 0.90, all four levels ===
+  q      model     viol  Kupiec_p  pairs  ind_p   cc_p    pinball(x1e4)  ES: mean_disc  ES p   | DM(alt-base)  p
+  0.95   (1,1,1)   202    0.6967     10  0.9012  0.9197       99.5784         0.0658  0.1945
+  0.95   (2,1,2)   205    0.5439     10  0.8226  0.8112       99.5164         0.0467  0.2622 |      -0.436  0.6627
+  0.975  (1,1,1)   100    0.8645      5  0.1601  0.3675       61.9804         0.1379  0.1289
+  0.975  (2,1,2)   101    0.7856      5  0.1715  0.3784       61.9497         0.1129  0.1759 |      -0.185  0.8530
+  0.99   (1,1,1)    40    0.9147      0  0.3645  0.6591       32.6660         0.4632  0.0107
+  0.99   (2,1,2)    40    0.9147      0  0.3645  0.6591       32.6332         0.4563  0.0090 |      -0.176  0.8602
+  0.995  (1,1,1)    26    0.1724      0  0.5563  0.3316       19.8147         0.4326  0.0286
+  0.995  (2,1,2)    28    0.0766      0  0.5262  0.1705       19.7750         0.2954  0.0901 |      -0.208  0.8352
+
+(ES p: one-sided bootstrap p-value against an ES that is too low; DM < 0 favours the alternative)

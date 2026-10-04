@@ -1,0 +1,54 @@
+n = 3933 forecasts, 2010-12-22 to 2026-06-30
+
+=== 1. Violation rates with exact 95% intervals (percent of days) ===
+model         level  viol    exp   rate     exact 95% CI  Kupiec p  binom 1-sided P(X>=x)
+EGARCH-EVT    0.950   202  196.7   5.14     [4.47, 5.87]     0.697                  0.358
+EGARCH-EVT    0.975   100   98.3   2.54     [2.07, 3.08]     0.865                  0.446
+EGARCH-EVT    0.990    40   39.3   1.02     [0.73, 1.38]     0.915                  0.479
+EGARCH-EVT    0.995    26   19.7   0.66     [0.43, 0.97]     0.172                  0.097
+GARCH-EVT     0.950   209  196.7   5.31     [4.63, 6.06]     0.371                  0.192
+GARCH-EVT     0.975   100   98.3   2.54     [2.07, 3.08]     0.865                  0.446
+GARCH-EVT     0.990    38   39.3   0.97     [0.68, 1.32]     0.830                  0.606
+GARCH-EVT     0.995    26   19.7   0.66     [0.43, 0.97]     0.172                  0.097
+Static POT    0.950   200  196.7   5.09     [4.42, 5.82]     0.807                  0.413
+Static POT    0.975    92   98.3   2.34     [1.89, 2.86]     0.514                  0.755
+Static POT    0.990    43   39.3   1.09     [0.79, 1.47]     0.562                  0.299
+Static POT    0.995    28   19.7   0.71     [0.47, 1.03]     0.077                  0.044
+EGARCH-t      0.950   285  196.7   7.25     [6.46, 8.10]     0.000                  0.000
+EGARCH-t      0.975   175   98.3   4.45     [3.83, 5.14]     0.000                  0.000
+EGARCH-t      0.990    84   39.3   2.14     [1.71, 2.64]     0.000                  0.000
+EGARCH-t      0.995    46   19.7   1.17     [0.86, 1.56]     0.000                  0.000
+
+EGARCH-EVT, circular block bootstrap (block length 20, 5,000 replications):
+  level 0.950: rate 5.14%, interval [4.50, 5.80]  (nominal 5.0%)
+  level 0.975: rate 2.54%, interval [2.06, 3.08]  (nominal 2.5%)
+  level 0.990: rate 1.02%, interval [0.71, 1.35]  (nominal 1.0%)
+  level 0.995: rate 0.66%, interval [0.43, 0.92]  (nominal 0.5%)
+
+=== 2. Power of the Kupiec test (5% level) at n = 3933 ===
+  level  nominal %   x1.25    x1.5   x1.75    x2.0    x2.5    x3.0   smallest ratio, 80% power
+  0.950        5.0    0.92    1.00    1.00    1.00    1.00    1.00                        1.21
+  0.975        2.5    0.65    0.99    1.00    1.00    1.00    1.00                        1.31
+  0.990        1.0    0.31    0.80    0.98    1.00    1.00    1.00                        1.50
+  0.995        0.5    0.21    0.56    0.84    0.96    1.00    1.00                        1.70
+(power for a true violation rate equal to the stated multiple of the nominal rate)
+
+=== 3. Expected-shortfall discrepancy with bootstrap 95% intervals ===
+model         level  viol   mean D    sd D     95% CI for mean D  one-sided p
+EGARCH-EVT    0.950   202    0.066   1.096      [-0.080, +0.227]       0.1945
+EGARCH-EVT    0.975   100    0.138   1.220      [-0.086, +0.383]       0.1289
+EGARCH-EVT    0.990    40    0.463   1.232      [+0.093, +0.852]       0.0107
+EGARCH-EVT    0.995    26    0.433   1.145      [+0.017, +0.879]       0.0286
+GARCH-EVT     0.950   209    0.015   1.136      [-0.133, +0.178]       0.4289
+GARCH-EVT     0.975   100    0.095   1.301      [-0.151, +0.357]       0.2209
+GARCH-EVT     0.990    38    0.458   1.338      [+0.063, +0.897]       0.0216
+GARCH-EVT     0.995    26    0.327   1.248      [-0.113, +0.820]       0.0944
+
+The p-values here use one seed per test (20260901) and can differ from Table 7.4 of the dissertation, which comes from evaluate.py and level975.py, by Monte Carlo error of the 10,000-draw bootstrap (up to about 0.012 here).
+Bonferroni level for the eight primary tests: 0.05/8 = 0.0063; smallest p-value 0.0107
+Tests below 0.05: EGARCH-EVT 0.99: 0.011, EGARCH-EVT 0.995: 0.029, GARCH-EVT 0.99: 0.022
+Tests below the Bonferroni level: none
+
+=== 4. GPD shape estimated in the rolling windows (EGARCH-EVT, 90th-percentile threshold) ===
+  mean 0.053, median 0.063, 5th-95th percentile [-0.200, 0.193], share of windows with a negative estimate 0.145; full-sample estimate 0.1006 (Section 6.4)
+  mean by calendar year: 2010 0.018, 2011 -0.169, 2012 -0.181, 2013 -0.020, 2014 0.048, 2015 0.037, 2016 0.047, 2017 0.121, 2018 0.169, 2019 0.201, 2020 0.154, 2021 0.120, 2022 0.051, 2023 0.061, 2024 0.073, 2025 0.065, 2026 0.096
